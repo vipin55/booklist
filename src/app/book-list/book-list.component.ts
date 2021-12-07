@@ -17,7 +17,6 @@ export class BookListComponent implements OnInit {
 
   getBooks(): void {
     this.books = this.bookListService.getBooks().subscribe((data: any) => {
-      console.log(data);
       this.books = data;
     })
   }
