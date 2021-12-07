@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <h1 style="text-align: center;">Book List</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Publish date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let book of books">
+            <th>{{book.title}}</th>
+            <td class="col-md-10">{{book.description}}</td>
+            <td>{{book.publishDate | date}}</td>
+          </tr>
+      </table>
+</div>
