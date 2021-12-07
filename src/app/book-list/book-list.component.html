@@ -1,18 +1,14 @@
-<div class="container-fluid">
-    <h1 style="text-align: center;">Book List</h1>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Publish date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr  *ngFor="let book of books">
-            <th>{{book.title}}</th>
-            <td class="col-md-10">{{book.description}}</td>
-            <td>{{book.publishDate | date}}</td>
-          </tr>
-      </table>
-</div>
+
+<table matSort (matSortChange)="sortData($event)">
+  <tr>
+    <th mat-sort-header="title">Title</th>
+    <th mat-sort-header="description">Description</th>
+    <th mat-sort-header="publishDate">Publish Date</th>
+  </tr>
+
+  <tr *ngFor="let item of sortedData">
+    <td>{{item.title}}</td>
+    <td class="col-md-10">{{item.description}}</td>
+    <td>{{item.publishDate | date}}</td>
+  </tr>
+</table>
